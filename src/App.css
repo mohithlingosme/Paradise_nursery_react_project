@@ -88,6 +88,7 @@ button:focus-visible, a:focus-visible { outline: 3px solid #b8c99d; outline-offs
 .catalogue-toolbar { display: flex; align-items: center; justify-content: space-between; padding: 13px 0; margin-bottom: 30px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: #536453; font-size: 11px; font-weight: 700; }
 .toolbar-note { color: #98a092; font-size: 10px; font-weight: 500; }
 .plant-category-section { margin-top: 45px; }
+.category-description { margin: -8px 0 18px; color: #858d80; font-size: 11px; line-height: 1.6; }
 .category-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 20px; }
 .category-heading .eyebrow { margin-bottom: 7px; color: #8a9b7f; font-size: 9px; }
 .category-heading h2 { margin: 0; color: var(--green-900); font: 500 29px/1.2 var(--serif); }

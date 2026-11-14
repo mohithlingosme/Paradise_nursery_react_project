@@ -14,7 +14,7 @@ function LandingPage() {
         <span className="landing-top-note">HOUSEPLANTS · GOOD LIVING</span>
       </div>
       <section className="hero-content">
-        <p className="hero-kicker"><span /> YOUR HOME, A LITTLE GREENER</p>
+        <p className="hero-kicker"><span /> Welcome to Paradise Nursery</p>
         <h1>Make room<br />for <em>nature.</em></h1>
         <p className="hero-description">Thoughtfully chosen houseplants to bring calm, character, and a breath of fresh life into your everyday spaces.</p>
         <Link className="button hero-button" to="/plants">Get Started <span aria-hidden="true">↗</span></Link>

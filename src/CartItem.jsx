@@ -17,6 +17,15 @@ export default function CartItem() {
   const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
   const totalCost = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
+  // Remove the product line when the shopper decrements its last item.
+  const handleDecrement = (item) => {
+    if (item.quantity <= 1) {
+      dispatch(removeItem(item.id));
+      return;
+    }
+    dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }));
+  };
+
   return (
     <div className="app-page">
       <Navbar />
@@ -45,12 +54,12 @@ export default function CartItem() {
                   <img className="cart-line-image" src={`${import.meta.env.BASE_URL}${item.image}`} alt={`${item.name} houseplant illustration`} />
                   <div className="cart-line-details">
                     <span className="cart-line-category">{item.category}</span>
-                    <h2>{item.name}</h2>
+                    <h2 className="cart-item-name">{item.name}</h2>
                     <span className="unit-price">Unit price: {currency.format(item.price)}</span>
                     <button className="text-button delete-button" type="button" onClick={() => dispatch(removeItem(item.id))}>Remove</button>
                   </div>
                   <div className="quantity-control" aria-label={`Quantity for ${item.name}`}>
-                    <button type="button" aria-label={`Decrease ${item.name} quantity`} onClick={() => dispatch(updateQuantity({ id: item.id, quantity: item.quantity - 1 }))}>−</button>
+                    <button type="button" aria-label={`Decrease ${item.name} quantity`} onClick={() => handleDecrement(item)}>−</button>
                     <span aria-live="polite">{item.quantity}</span>
                     <button type="button" aria-label={`Increase ${item.name} quantity`} onClick={() => dispatch(updateQuantity({ id: item.id, quantity: item.quantity + 1 }))}>+</button>
                   </div>
